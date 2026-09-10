@@ -8,6 +8,12 @@ Personal [Homebrew](https://brew.sh) tap.
 brew install --cask amailp/tap/try-omarchy
 ```
 
+Recent Homebrew versions ask you to trust third-party taps first:
+
+```sh
+brew trust amailp/tap
+```
+
 Or tap first, then install:
 
 ```sh
