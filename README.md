@@ -30,12 +30,13 @@ brew install --cask try-omarchy
 
 ## Prism Launcher (parental fork)
 
-The bundle is ad-hoc signed, not notarized, so install it without quarantine
-or macOS will refuse to open it:
-
 ```sh
-brew install --cask --no-quarantine amailp/tap/prismlauncher-parental
+brew install --cask amailp/tap/prismlauncher-parental
 ```
+
+The bundle is ad-hoc signed, not notarized. Homebrew 7 and later no longer
+quarantines cask downloads, so the app opens normally. On older Homebrew add
+`--no-quarantine` to the install command, or macOS will refuse to open it.
 
 It conflicts with the upstream `prismlauncher` cask; uninstall that first.
 

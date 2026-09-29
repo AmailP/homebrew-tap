@@ -9,6 +9,7 @@ cask "prismlauncher-parental" do
 
   livecheck do
     url :url
+    regex(/^v?(\d+(?:\.\d+)+-parental)$/i)
     strategy :github_latest
   end
 
