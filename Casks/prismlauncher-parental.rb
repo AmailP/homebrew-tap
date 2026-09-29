@@ -1,6 +1,6 @@
 cask "prismlauncher-parental" do
-  version "0.0.0"
-  sha256 "0000000000000000000000000000000000000000000000000000000000000000"
+  version "11.0.3-parental"
+  sha256 "6df0a0f56cc505556edae1d74c669abbe641c4af0a361f0edbb2f63b8312f3cf"
 
   url "https://github.com/AmailP/PrismLauncher/releases/download/v#{version}/PrismLauncher-#{version}.zip"
   name "Prism Launcher (parental fork)"
