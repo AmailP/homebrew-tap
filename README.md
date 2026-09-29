@@ -34,9 +34,13 @@ brew install --cask try-omarchy
 brew install --cask amailp/tap/prismlauncher-parental
 ```
 
-The bundle is ad-hoc signed, not notarized. Homebrew 7 and later no longer
-quarantines cask downloads, so the app opens normally. On older Homebrew add
-`--no-quarantine` to the install command, or macOS will refuse to open it.
+The bundle is ad-hoc signed, not notarized, so Gatekeeper would refuse to open
+it. The cask removes the quarantine attribute after install, so the app opens
+normally. If macOS still complains, run:
+
+```sh
+xattr -dr com.apple.quarantine /Applications/PrismLauncher.app
+```
 
 It installs as `PrismLauncher.app`, so it can live next to the upstream
 `prismlauncher` cask (`Prism Launcher.app`). Both share the same data folder in

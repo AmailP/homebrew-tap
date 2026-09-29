@@ -14,9 +14,16 @@ cask "prismlauncher-parental" do
   end
 
   depends_on arch: :arm64
-  depends_on macos: ">= :monterey"
+  depends_on macos: :monterey
 
   app "PrismLauncher.app"
+
+  # The bundle is ad-hoc signed, not notarized. macOS quarantines the download,
+  # and Gatekeeper refuses to open quarantined unnotarized apps, so strip it.
+  postflight do
+    system_command "/usr/bin/xattr",
+                   args: ["-dr", "com.apple.quarantine", "#{appdir}/PrismLauncher.app"]
+  end
 
   zap trash: [
     "~/Library/Application Support/PrismLauncher",
