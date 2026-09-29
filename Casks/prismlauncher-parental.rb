@@ -20,9 +20,8 @@ cask "prismlauncher-parental" do
 
   # The bundle is ad-hoc signed, not notarized. macOS quarantines the download,
   # and Gatekeeper refuses to open quarantined unnotarized apps, so strip it.
-  postflight do
-    system_command "/usr/bin/xattr",
-                   args: ["-dr", "com.apple.quarantine", "#{appdir}/PrismLauncher.app"]
+  postflight_steps do
+    run "/usr/bin/xattr", args: ["-dr", "com.apple.quarantine", "{{appdir}}/PrismLauncher.app"]
   end
 
   zap trash: [
