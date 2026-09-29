@@ -13,7 +13,6 @@ cask "prismlauncher-parental" do
     strategy :github_latest
   end
 
-  conflicts_with cask: "prismlauncher"
   depends_on arch: :arm64
   depends_on macos: ">= :monterey"
 

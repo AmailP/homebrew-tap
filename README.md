@@ -38,7 +38,9 @@ The bundle is ad-hoc signed, not notarized. Homebrew 7 and later no longer
 quarantines cask downloads, so the app opens normally. On older Homebrew add
 `--no-quarantine` to the install command, or macOS will refuse to open it.
 
-It conflicts with the upstream `prismlauncher` cask; uninstall that first.
+It installs as `PrismLauncher.app`, so it can live next to the upstream
+`prismlauncher` cask (`Prism Launcher.app`). Both share the same data folder in
+`~/Library/Application Support/PrismLauncher`, so do not run them at once.
 
 ## Uninstall
 
